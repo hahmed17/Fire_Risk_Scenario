@@ -441,8 +441,13 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
         print("No perimeters produced")
         return None
 
-    final_geom = gdf.geometry.iloc[-1]
-    final_geom = validate_geom(final_geom)
+    polys = gdf[gdf.geometry.type.isin(["Polygon", "MultiPolygon"])]
+
+    if len(polys) == 0:
+        print("No polygon perimeters found")
+        return None
+    
+    final_geom = polys.geometry.iloc[-1]
 
     if not debug:
         cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
