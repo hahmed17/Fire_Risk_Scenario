@@ -1,30 +1,43 @@
-# Requirements
- 1. At least 4 CPUs
- 2. Dependencies installation:
-```
-chmod +x install_packages.sh
-./install_packages.sh
-```
+# Prerequisites
+- Python
+- GDAL
+- At least 4 CPUs (to run FARSITE simulations)
+
+
+# Wildfire Commons Resources
+- **FARSITE.** The `farsite` directory contains the executable files and source code required to configure and run a FARSITE fire spread simulation.
+- **Forest landscape data.** The `Forest` directory contains the landscape and tree data (in `.tif`, `.geojson`, and `.txt` format) that are used as inputs to the FARSITE simulation.
+- **Ignition coordinates.** The given latitude/longitude coordinate for this location is **N 38° 54.081' W 120° 1.837'**, circa South Lake Tahoe, CA, USA. 
+- **Weather parameters.** Parameter values for wind, air, and climate conditions are provided as inputs to the FARSITE simulation.
 
 
 
-The Forest landscape directory contains the following data:
-    <city name>_depth.tif : 1 band raster file of surface fuel depth [meters] 
-    <city name>_fbfm13.tif : 1 band raster file of Anderson fuel model [int] 
-    <city name>_generated_buildings_fireprops.geojson : geojson containing synthetic building polygons from a separate collaborator
-    <city name>_moist.tif : 1 band raster file of surface fuel moisture [dec] 
-    <city name>_rhof1.tif : 1 band raster file of 1 hour surface fuel loading [kg/m^2]    
-    <city name>_rhof10.tif : 1 band raster file of 10 hour surface fuel loading [kg/m^2]     
-    <city name>_rhof100.tif : 1 band raster file of 100 hour surface fuel loading [kg/m^2] 
-    <city name>_SAV.tif : 1 band raster file of fuel surface area to volume [1/m] 
-    <city name>_Treelist.geojson : geojson containing tree data including 
-        lat/lon, height (HT) [m], 
-        canopy base height (CBH) [m],
-        maximum canopy diameter (DIA) [m],
-        height to maximum canopy diameter (HT_TO_DIA) [m],
-        canopy bulk density (CBD) [kg/m^3],
-        canopy moisture (MOIST) [dec],
-        fine fuel size scale (SS)
-    <city name>_Treelist.txt : text file containing the same data as <city name>_Treelist.geojson in txt format
-    roads.geojson : geojson containing road network
-    <city name>_elevation.tif : 1 band raster file of elevation from USGS DEM products 
+# Data Transformation: `data_transformation.ipynb`
+- Derives landscape raster bands in `.tif` file format
+- Projects landscape layers to EPSG:5070
+- Aligns and rescales layers to the elevation grid
+- Converts `.tif` bands to ASCII rasters (`.asc`)
+- Compiles all layers into `Forest_LCP_Outputs/landscape.lcp` using `farsite/lcpmake` executable
+- Writes the EPSG:5070 projection header into the `.lcp` file
+
+
+# Intermediate Data Outputs
+
+`Forest_LCP_Outputs`
+- Eight `.tif` raster files
+- Eight `asc` files (with corresponding `.prj` and `.xml` files)
+- `landscape.lcp` file compatible with FARSITE input requirements
+
+
+# FARSITE Fire Spread Simulation: `farsite_simulation.ipynb`
+- Builds an ignition polygon around the given ignition coordinate
+- Runs FARSITE iteratively in 30-minute steps for 4 hours
+- Each step's output perimeter becomes the ignition polygon for the next step
+- Plots all perimeters and prints area growth statistics over time
+- Exports all perimeters to `fire_output_geojsons/perimeters.geojson`
+
+
+
+# Final Model Outputs: `fire_output_geojsons`
+This directory contains the FARSITE prediction geometries as Polygon objects in `perimeters.geojson`.
+
