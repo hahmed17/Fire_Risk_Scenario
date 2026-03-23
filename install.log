@@ -7,7 +7,7 @@ pip 26.0.1 from /opt/conda/lib/python3.12/site-packages/pip (python 3.12)
 Channels:
  - conda-forge
 Platform: linux-64
-Collecting package metadata (repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - done
+Collecting package metadata (repodata.json): - \ | / - \ | / - done
 Solving environment: | / - \ done
 
 

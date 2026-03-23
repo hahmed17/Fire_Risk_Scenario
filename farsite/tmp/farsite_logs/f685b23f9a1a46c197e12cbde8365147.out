@@ -1,9 +1,0 @@
-Farsite $Rev: 2395 $
-Number of parallel threads = 4 (omp_get_num_procs = 6).
-Loading lcp file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/Forest_LCP_Outputs/landscape.lcp
-Loading inputs file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/f685b23f9a1a46c197e12cbde8365147_config.cfg
-Loading ignition file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/f685b23f9a1a46c197e12cbde8365147_ignite.shp
-Loading barrier file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/farsite/NoBarrier/NoBarrier.shp
-Launching Farsite #1
-Starting time step 0.000000 (maximum = 18)
-Bad Cover Value  Bad Cover value
