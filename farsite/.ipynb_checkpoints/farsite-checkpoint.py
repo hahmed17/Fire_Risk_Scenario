@@ -95,7 +95,8 @@ class Config_File:
                  FARSITE_PERIMETER_RES: int,
                  fuel_moistures=None,
                  temperature=None, humidity=None,
-                raws_elevation=None):
+                 raws_elevation=None,
+                 write_each_timestep=None):
 
         self.__set_default()
 
@@ -117,6 +118,8 @@ class Config_File:
             self.humidity = humidity
         if raws_elevation is not None:
             self.RAWS_ELEVATION = raws_elevation 
+        if write_each_timestep is not None:
+            self.WRITE_OUTPUTS_EACH_TIMESTEP = write_each_timestep
 
     
     def __set_default(self):
@@ -212,7 +215,8 @@ class Farsite:
                  lcppath: str = None, barrierpath: str = None,
                  dist_res: int = 30, perim_res: int = 60,
                  debug: bool = False, fuel_moistures=None,
-                 temperature=None, humidity=None, raws_elevation=None):
+                 temperature=None, humidity=None, raws_elevation=None,
+                 write_each_timestep=None):
 
         self.farsitepath = str(FARSITE_EXECUTABLE)
         self.id          = uuid.uuid4().hex
@@ -233,7 +237,7 @@ class Farsite:
         winddirection = params['winddirection']
 
         # Config file
-        self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, dist_res, perim_res, fuel_moistures=fuel_moistures, temperature=temperature, humidity=humidity, raws_elevation=raws_elevation)
+        self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, dist_res, perim_res, fuel_moistures=fuel_moistures, temperature=temperature, humidity=humidity, raws_elevation=raws_elevation, write_each_timestep=write_each_timestep)
         self.configpath = os.path.join(self.tmpfolder, f'{self.id}_config.cfg')
         self.config.to_file(self.configpath)
 
@@ -273,7 +277,7 @@ class Farsite:
 
     def output_geom(self):
         """
-        Extract output geometry from FARSITE shapefile results.
+        Extract the FINAL output geometry from FARSITE shapefile results.
         FARSITE writes {outpath}_Perimeters.shp as a prefix in tmp/.
         """
         output_path = self.outpath + '_Perimeters.shp'
@@ -284,8 +288,35 @@ class Farsite:
         if len(gdf) == 0:
             return None
 
+        # Use the LAST feature — FARSITE writes perimeters chronologically
         geom = gdf['geometry'].iloc[-1]
-        return Polygon(geom.coords)
+        return Polygon(geom.exterior.coords)
+
+    def output_all_geoms(self):
+        """
+        Extract ALL output perimeters from FARSITE shapefile results.
+        Requires WRITE_OUTPUTS_EACH_TIMESTEP = 1 in the config.
+        Returns list of Shapely Polygons in chronological order, or None.
+        """
+        output_path = self.outpath + '_Perimeters.shp'
+        if not os.path.exists(output_path):
+            return None
+
+        gdf = gpd.read_file(output_path)
+        if len(gdf) == 0:
+            return None
+
+        polys = []
+        for geom in gdf['geometry']:
+            if geom is None:
+                continue
+            if isinstance(geom, (MultiPolygon, GeometryCollection)):
+                geom = max(geom.geoms, key=lambda g: g.area)
+            if hasattr(geom, 'exterior'):
+                polys.append(Polygon(geom.exterior.coords))
+            else:
+                polys.append(Polygon(geom.coords))
+        return polys if polys else None
 
 
 # ============================================================================
@@ -350,8 +381,9 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
         }
         farsite = Farsite(poly, new_params, start_time=start_time,
                           lcppath=lcppath, dist_res=dist_res,
-                          perim_res=perim_res, fuel_moistures=None, 
+                          perim_res=perim_res, fuel_moistures=fuel_moistures, 
                           temperature=temperature, humidity=humidity,
+                          raws_elevation=raws_elevation,
                           debug=debug)
         farsite.run()
         out = farsite.output_geom()
@@ -374,6 +406,7 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
     farsite = Farsite(poly, new_params, start_time=start_time,
                       lcppath=lcppath, dist_res=dist_res,
                       perim_res=perim_res, fuel_moistures=fuel_moistures,
+                      temperature=temperature, humidity=humidity,
                       raws_elevation=raws_elevation, debug=debug)
     farsite.run()
     out = farsite.output_geom()
@@ -386,70 +419,59 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
     return out
 
 
+# ============================================================================
+# CONTINUOUS SIMULATION — single FARSITE run with intermediate perimeters
+# ============================================================================
 
 def run_farsite_continuous(poly, params, start_time, lcppath,
-                          dist_res=30, perim_res=60,
-                          fuel_moistures=None,
-                          temperature=None, humidity=None,
-                          raws_elevation=None,
-                          debug=False):
+                           dist_res=30, perim_res=60,
+                           fuel_moistures=None,
+                           temperature=None, humidity=None,
+                           raws_elevation=None,
+                           debug=False):
     """
-    Run ONE single 4-hour FARSITE simulation with outputs written
-    at each timestep (30-minute intervals).
+    Run a single continuous FARSITE simulation for the full duration,
+    with WRITE_OUTPUTS_EACH_TIMESTEP=1 to capture intermediate perimeters.
+
+    Unlike forward_pass_farsite (which breaks the simulation into separate
+    FARSITE invocations that each restart fire acceleration), this function
+    runs ONE continuous simulation so the fire accelerates once and spreads
+    at equilibrium rate for the rest of the period.
+
+    Args:
+        poly:        Initial fire perimeter (Shapely Polygon, EPSG:5070)
+        params:      Dict with 'windspeed' (int), 'winddirection' (int), 'dt' (timedelta)
+        start_time:  Start time (datetime or "YYYY-MM-DD HH:MM:SS" string)
+        lcppath:     Path to .lcp landscape file
+        dist_res:    Distance resolution (meters)
+        perim_res:   Perimeter resolution (meters)
+        debug:       Keep intermediate files if True
 
     Returns:
-        Final fire perimeter as Shapely Polygon, or None on failure
+        List of Shapely Polygons (one per internal timestep), or None on failure
     """
+    if dist_res > 500:
+        warnings.warn(f'dist_res ({dist_res}) must be 1-500. Setting to 500')
+        dist_res = 500
+    if perim_res > 500:
+        warnings.warn(f'perim_res ({perim_res}) must be 1-500. Setting to 500')
+        perim_res = 500
 
-
-    new_params = {
-        'windspeed':     params['windspeed'],
-        'winddirection': params['winddirection'],
-        'dt':            params['dt'],
-    }
-
-    farsite = Farsite(
-        poly,
-        new_params,
-        start_time=start_time,
-        lcppath=lcppath,
-        dist_res=dist_res,
-        perim_res=perim_res,
-        fuel_moistures=fuel_moistures,
-        temperature=temperature,
-        humidity=humidity,
-        raws_elevation=raws_elevation,
-        debug=debug
-    )
-
-    # --- CRITICAL OVERRIDES ---
-    farsite.config.WRITE_OUTPUTS_EACH_TIMESTEP = 1
-    farsite.config.FARSITE_TIMESTEP = 30
-    farsite.config.to_file(farsite.configpath)
-    # --------------------------
-
+    farsite = Farsite(poly, params, start_time=start_time,
+                      lcppath=lcppath, dist_res=dist_res,
+                      perim_res=perim_res, fuel_moistures=fuel_moistures,
+                      temperature=temperature, humidity=humidity,
+                      raws_elevation=raws_elevation,
+                      write_each_timestep=1,
+                      debug=debug)
     farsite.run()
+    polys = farsite.output_all_geoms()
 
-    output_path = farsite.outpath + '_Perimeters.shp'
-    if not os.path.exists(output_path):
-        print("FARSITE output shapefile not found")
+    if polys is None:
+        print("No output perimeters produced; keeping outputs for inspection.")
         return None
-
-    gdf = gpd.read_file(output_path)
-
-    if len(gdf) == 0:
-        print("No perimeters produced")
-        return None
-
-    polys = gdf[gdf.geometry.type.isin(["Polygon", "MultiPolygon"])]
-
-    if len(polys) == 0:
-        print("No polygon perimeters found")
-        return None
-    
-    final_geom = polys.geometry.iloc[-1]
 
     if not debug:
         cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
 
-    return final_geom
+    return polys
