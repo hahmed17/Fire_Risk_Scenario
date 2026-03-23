@@ -284,7 +284,7 @@ class Farsite:
         if len(gdf) == 0:
             return None
 
-        geom = gdf['geometry'][0]
+        geom = gdf['geometry'].iloc[-1]
         return Polygon(geom.coords)
 
 
@@ -350,9 +350,8 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
         }
         farsite = Farsite(poly, new_params, start_time=start_time,
                           lcppath=lcppath, dist_res=dist_res,
-                          perim_res=perim_res, fuel_moistures=fuel_moistures, 
+                          perim_res=perim_res, fuel_moistures=None, 
                           temperature=temperature, humidity=humidity,
-                          raws_elevation=raws_elevation,
                           debug=debug)
         farsite.run()
         out = farsite.output_geom()
@@ -375,7 +374,6 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
     farsite = Farsite(poly, new_params, start_time=start_time,
                       lcppath=lcppath, dist_res=dist_res,
                       perim_res=perim_res, fuel_moistures=fuel_moistures,
-                      temperature=temperature, humidity=humidity,
                       raws_elevation=raws_elevation, debug=debug)
     farsite.run()
     out = farsite.output_geom()
