@@ -4,12 +4,30 @@ After conda activate:
 /opt/conda/bin/python
 Python 3.12.10
 pip 26.0.1 from /opt/conda/lib/python3.12/site-packages/pip (python 3.12)
-Retrieving notices: - \ | / - \ | done
 Channels:
  - conda-forge
 Platform: linux-64
-Collecting package metadata (repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
-Solving environment: / - \ | done
+Collecting package metadata (repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - done
+Solving environment: | / - \ done
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 25.3.1
+    latest version: 26.1.1
+
+Please update conda by running
+
+    $ conda update -n base -c conda-forge conda
+
+
+
+# All requested packages already installed.
+
+Channels:
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): - \ | / - done
+Solving environment: | / - \ done
 
 
 ==> WARNING: A newer version of conda exists. <==
