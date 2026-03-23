@@ -94,7 +94,8 @@ class Config_File:
                  FARSITE_DISTANCE_RES: int,
                  FARSITE_PERIMETER_RES: int,
                  fuel_moistures=None,
-                 temperature=None, humidity=None):
+                 temperature=None, humidity=None,
+                raws_elevation=None):
 
         self.__set_default()
 
@@ -114,6 +115,8 @@ class Config_File:
             self.temperature = temperature
         if humidity is not None:
             self.humidity = humidity
+        if raws_elevation is not None:
+            self.RAWS_ELEVATION = raws_elevation 
 
     
     def __set_default(self):
@@ -209,7 +212,7 @@ class Farsite:
                  lcppath: str = None, barrierpath: str = None,
                  dist_res: int = 30, perim_res: int = 60,
                  debug: bool = False, fuel_moistures=None,
-                 temperature=None, humidity=None):
+                 temperature=None, humidity=None, raws_elevation=None):
 
         self.farsitepath = str(FARSITE_EXECUTABLE)
         self.id          = uuid.uuid4().hex
@@ -230,7 +233,7 @@ class Farsite:
         winddirection = params['winddirection']
 
         # Config file
-        self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, dist_res, perim_res, fuel_moistures=fuel_moistures, temperature=temperature, humidity=humidity)
+        self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, dist_res, perim_res, fuel_moistures=fuel_moistures, temperature=temperature, humidity=humidity, raws_elevation=raws_elevation)
         self.configpath = os.path.join(self.tmpfolder, f'{self.id}_config.cfg')
         self.config.to_file(self.configpath)
 
@@ -307,6 +310,7 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
                          dist_res=30, perim_res=60, 
                          fuel_moistures=None, 
                          temperature=None, humidity=None,
+                         raws_elevation=None,
                          debug=False):
     """
     Run FARSITE forward simulation for specified time period.
@@ -337,7 +341,7 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
     run_id = uuid.uuid4().hex
 
     # Run multiple FARSITE steps if needed
-    number_of_farsites = dt.seconds // (MAX_SIM * 60)
+    number_of_farsites = int(dt.total_seconds() // (MAX_FARSITE_TIMESTEP * 60))
     for i in range(number_of_farsites):
         new_params = {
             'windspeed':     params['windspeed'],
