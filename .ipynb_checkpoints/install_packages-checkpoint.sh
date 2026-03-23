@@ -26,7 +26,7 @@
     /opt/conda/bin/python -m pip -V
     
     conda install -c conda-forge -y gdal
-    conda install -c conda-forge proj-data
+    conda install -c conda-forge -y proj-data
     
     /opt/conda/bin/python -m pip install --upgrade pip
     /opt/conda/bin/python -m pip install -r requirements.txt

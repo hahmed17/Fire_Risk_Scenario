@@ -92,7 +92,9 @@ class Config_File:
                  windspeed: int,
                  winddirection: int,
                  FARSITE_DISTANCE_RES: int,
-                 FARSITE_PERIMETER_RES: int):
+                 FARSITE_PERIMETER_RES: int,
+                 fuel_moistures=None,
+                 temperature=None, humidity=None):
 
         self.__set_default()
 
@@ -104,7 +106,16 @@ class Config_File:
         self.FARSITE_PERIMETER_RES = FARSITE_PERIMETER_RES
         self.windspeed             = windspeed
         self.winddirection         = winddirection
+        
+        # override default weather parameters if provided
+        if fuel_moistures is not None:
+            self.FUEL_MOISTURES_DATA = [list(fuel_moistures)]
+        if temperature is not None:  
+            self.temperature = temperature
+        if humidity is not None:
+            self.humidity = humidity
 
+    
     def __set_default(self):
         self.version                              = 1.0
         self.FARSITE_MIN_IGNITION_VERTEX_DISTANCE = FARSITE_MIN_IGNITION_VERTEX_DISTANCE
@@ -197,7 +208,8 @@ class Farsite:
                  start_time: datetime.datetime,
                  lcppath: str = None, barrierpath: str = None,
                  dist_res: int = 30, perim_res: int = 60,
-                 debug: bool = False):
+                 debug: bool = False, fuel_moistures=None,
+                 temperature=None, humidity=None):
 
         self.farsitepath = str(FARSITE_EXECUTABLE)
         self.id          = uuid.uuid4().hex
@@ -218,7 +230,7 @@ class Farsite:
         winddirection = params['winddirection']
 
         # Config file
-        self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, dist_res, perim_res)
+        self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, dist_res, perim_res, fuel_moistures=fuel_moistures, temperature=temperature, humidity=humidity)
         self.configpath = os.path.join(self.tmpfolder, f'{self.id}_config.cfg')
         self.config.to_file(self.configpath)
 
@@ -292,7 +304,10 @@ def cleanup_farsite_outputs(run_id, base_dir):
 # ============================================================================
 
 def forward_pass_farsite(poly, params, start_time, lcppath,
-                         dist_res=30, perim_res=60, debug=False):
+                         dist_res=30, perim_res=60, 
+                         fuel_moistures=None, 
+                         temperature=None, humidity=None,
+                         debug=False):
     """
     Run FARSITE forward simulation for specified time period.
     Exact copy of the working implementation from the Firemap repo.
@@ -331,7 +346,9 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
         }
         farsite = Farsite(poly, new_params, start_time=start_time,
                           lcppath=lcppath, dist_res=dist_res,
-                          perim_res=perim_res, debug=debug)
+                          perim_res=perim_res, fuel_moistures=None, 
+                          temperature=temperature, humidity=humidity,
+                          debug=debug)
         farsite.run()
         out = farsite.output_geom()
         if out is None:
@@ -352,7 +369,7 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
     }
     farsite = Farsite(poly, new_params, start_time=start_time,
                       lcppath=lcppath, dist_res=dist_res,
-                      perim_res=perim_res, debug=debug)
+                      perim_res=perim_res, fuel_moistures=fuel_moistures, debug=debug)
     farsite.run()
     out = farsite.output_geom()
 
