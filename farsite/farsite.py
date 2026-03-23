@@ -350,8 +350,9 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
         }
         farsite = Farsite(poly, new_params, start_time=start_time,
                           lcppath=lcppath, dist_res=dist_res,
-                          perim_res=perim_res, fuel_moistures=None, 
+                          perim_res=perim_res, fuel_moistures=fuel_moistures, 
                           temperature=temperature, humidity=humidity,
+                          raws_elevation=raws_elevation,
                           debug=debug)
         farsite.run()
         out = farsite.output_geom()
@@ -373,7 +374,9 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
     }
     farsite = Farsite(poly, new_params, start_time=start_time,
                       lcppath=lcppath, dist_res=dist_res,
-                      perim_res=perim_res, fuel_moistures=fuel_moistures, debug=debug)
+                      perim_res=perim_res, fuel_moistures=fuel_moistures,
+                      temperature=temperature, humidity=humidity,
+                      raws_elevation=raws_elevation, debug=debug)
     farsite.run()
     out = farsite.output_geom()
 
