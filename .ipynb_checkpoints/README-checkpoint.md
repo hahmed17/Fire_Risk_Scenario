@@ -12,7 +12,8 @@
 
 
 
-# Data Transformation: `data_transformation.ipynb`
+# Data Transformation
+**`data_transformation.ipynb`**
 - Derives landscape raster bands in `.tif` file format
 - Projects landscape layers to EPSG:5070
 - Aligns and rescales layers to the elevation grid
@@ -22,14 +23,14 @@
 
 
 # Intermediate Data Outputs
-
-`Forest_LCP_Outputs`
+**`Forest_LCP_Outputs`** directory
 - Eight `.tif` raster files
 - Eight `asc` files (with corresponding `.prj` and `.xml` files)
 - `landscape.lcp` file compatible with FARSITE input requirements
 
 
-# FARSITE Fire Spread Simulation: `farsite_simulation.ipynb`
+# FARSITE Fire Spread Simulation
+**`farsite_simulation.ipynb`**
 - Builds an ignition polygon around the given ignition coordinate
 - Runs FARSITE iteratively in 30-minute steps for 4 hours
 - Each step's output perimeter becomes the ignition polygon for the next step
@@ -38,6 +39,6 @@
 
 
 
-# Final Model Outputs: `fire_output_geojsons`
-This directory contains the FARSITE prediction geometries as Polygon objects in `perimeters.geojson`.
+# Final Model Outputs
+**`fire_output_geojsons/perimeters.geojson`** contains FARSITE prediction geometries and timesteps.
 
