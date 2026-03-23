@@ -384,3 +384,67 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
 
     cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
     return out
+
+
+
+def run_farsite_continuous(poly, params, start_time, lcppath,
+                          dist_res=30, perim_res=60,
+                          fuel_moistures=None,
+                          temperature=None, humidity=None,
+                          raws_elevation=None,
+                          debug=False):
+    """
+    Run ONE single 4-hour FARSITE simulation with outputs written
+    at each timestep (30-minute intervals).
+
+    Returns:
+        Final fire perimeter as Shapely Polygon, or None on failure
+    """
+
+
+    new_params = {
+        'windspeed':     params['windspeed'],
+        'winddirection': params['winddirection'],
+        'dt':            params['dt'],
+    }
+
+    farsite = Farsite(
+        poly,
+        new_params,
+        start_time=start_time,
+        lcppath=lcppath,
+        dist_res=dist_res,
+        perim_res=perim_res,
+        fuel_moistures=fuel_moistures,
+        temperature=temperature,
+        humidity=humidity,
+        raws_elevation=raws_elevation,
+        debug=debug
+    )
+
+    # --- CRITICAL OVERRIDES ---
+    farsite.config.WRITE_OUTPUTS_EACH_TIMESTEP = 1
+    farsite.config.FARSITE_TIMESTEP = 30
+    farsite.config.to_file(farsite.configpath)
+    # --------------------------
+
+    farsite.run()
+
+    output_path = farsite.outpath + '_Perimeters.shp'
+    if not os.path.exists(output_path):
+        print("FARSITE output shapefile not found")
+        return None
+
+    gdf = gpd.read_file(output_path)
+
+    if len(gdf) == 0:
+        print("No perimeters produced")
+        return None
+
+    final_geom = gdf.geometry.iloc[-1]
+    final_geom = validate_geom(final_geom)
+
+    if not debug:
+        cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
+
+    return final_geom
