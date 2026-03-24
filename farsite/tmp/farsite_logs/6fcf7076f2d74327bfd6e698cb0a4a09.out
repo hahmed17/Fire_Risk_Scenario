@@ -1,0 +1,5 @@
+Farsite $Rev: 2395 $
+Number of parallel threads = 4 (omp_get_num_procs = 6).
+Loading lcp file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/Forest_LCP_Outputs/landscape.lcp
+Loading inputs file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/6fcf7076f2d74327bfd6e698cb0a4a09_config.cfg
+Invalid end time Ending Date to close or past end of RAWS data (  30 minute buffer required)
