@@ -7,7 +7,7 @@
 # Wildfire Commons Resources
 - **FARSITE.** The `farsite` directory contains the executable files and source code required to configure and run a FARSITE fire spread simulation.
 - **Forest landscape data.** The `Forest` directory contains the landscape and tree data (in `.tif`, `.geojson`, and `.txt` format) that are used as inputs to the FARSITE simulation.
-- **Ignition coordinates.** The given latitude/longitude coordinate for this location is **N 38° 54.081' W 120° 1.837'**, circa South Lake Tahoe, CA, USA. 
+- **Ignition coordinates.** The given latitude/longitude coordinate for this location is **N 38° 54.081' W 120° 1.837'**. 
 - **Weather parameters.** Parameter values for wind, air, and climate conditions are provided as inputs to the FARSITE simulation.
 
 
