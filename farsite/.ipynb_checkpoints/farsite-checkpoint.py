@@ -1,8 +1,5 @@
 """
 Standalone FARSITE fire simulation module.
-Exact copy of the working farsite.py from the Firemap repo, with config
-and geometry imports inlined so no external dependencies are needed.
-
 Directory layout:
     ./
     ├── farsite.py       (this file)
@@ -11,7 +8,7 @@ Directory layout:
     ├── landscape.lcp
     ├── NoBarrier/
     │   └── NoBarrier.shp
-    └── tmp/             (created automatically)
+    └── tmp/             (created automatically when FARSITE is run)
 """
 import datetime
 import os
@@ -30,7 +27,7 @@ from shapely import make_valid
 
 
 # ============================================================================
-# PATHS  (inlined from config.py — all relative to this file)
+# PATHS (all relative to this file)
 # ============================================================================
 _DIR               = Path(__file__).parent
 FARSITE_EXECUTABLE = _DIR / "TestFARSITE"
@@ -38,7 +35,7 @@ NO_BARRIER_PATH    = _DIR / "NoBarrier" / "NoBarrier.shp"
 FARSITE_TMP_DIR    = _DIR / "tmp"
 
 # ============================================================================
-# CONSTANTS  (inlined from config.py — identical values)
+# CONSTANTS 
 # ============================================================================
 MAX_FARSITE_TIMESTEP                 = 30
 
@@ -67,7 +64,7 @@ DEFAULT_PERIM_RES = 150
 
 
 # ============================================================================
-# GEOMETRY UTILITIES  (inlined from geometry.py)
+# GEOMETRY UTILITIES 
 # ============================================================================
 
 def validate_geom(poly):
@@ -250,10 +247,10 @@ class Farsite:
         ignite_gdf = gpd.GeoDataFrame({'FID': [0], 'geometry': [initial]}, crs="EPSG:5070")
         ignite_gdf.to_file(self.ignitepath)
 
-        # Output path — FARSITE treats this as a file prefix, writing {outpath}_Perimeters.shp
+        # Output path
         self.outpath = os.path.join(self.tmpfolder, f'{self.id}_out')
 
-        # Run file — no extension on runpath, matching the working repo exactly
+        # Run file
         self.runfile = Run_File(self.lcppath, self.configpath,
                                 self.ignitepath, self.barrierpath, self.outpath)
         self.runpath = os.path.join(self.tmpfolder, f'{self.id}_run')
@@ -289,7 +286,7 @@ class Farsite:
         if len(gdf) == 0:
             return None
 
-        # Use the LAST feature — FARSITE writes perimeters chronologically
+        # Use the LAST feature (FARSITE writes perimeters chronologically)
         geom = gdf['geometry'].iloc[-1]
         return Polygon(geom.exterior.coords)
 
@@ -324,11 +321,11 @@ class Farsite:
         Extract fire perimeters from ArrivalTime raster outputs.
 
         FARSITE writes {outpath}_{elapsed}_ArrivalTime.asc for each timestep
-        when WRITE_OUTPUTS_EACH_TIMESTEP=1.  These rasters record the fire
-        arrival time (minutes from start) at every cell.  We threshold each
+        when WRITE_OUTPUTS_EACH_TIMESTEP=1. These rasters record the fire
+        arrival time (minutes from start) at every cell. We threshold each
         raster at its timestep value to build a burned-area polygon.
 
-        This is more robust than the shapefile approach because FARSITE
+        This is safer than the shapefile approach because FARSITE
         always writes the rasters even when perimeter vectorization fails
         (common with complex, fast-spreading fires in SB40 brush fuels).
 
@@ -588,7 +585,7 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
     elif rc != 0:
         print(f"WARNING: FARSITE exited with code {rc}.")
 
-    # --- Strategy 1: try shapefile perimeters ---
+    # --- Attempt 1: try shapefile perimeters ---
     polys = farsite.output_all_geoms()
     n_from_shp = len(polys) if polys else 0
 
@@ -601,7 +598,7 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
             cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
         return results
 
-    # --- Strategy 2: fall back to ArrivalTime rasters ---
+    # --- Attempt 2: fall back to ArrivalTime rasters ---
     raster_results = farsite.output_perimeters_from_rasters()
     n_from_raster = len(raster_results) if raster_results else 0
 
@@ -612,7 +609,7 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
             cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
         return raster_results
 
-    # --- Use whatever we got (shapefile partial results) ---
+    # --- Attempt 3: any available shapefile partial results ---
     if polys:
         results = []
         for idx, p in enumerate(polys):
