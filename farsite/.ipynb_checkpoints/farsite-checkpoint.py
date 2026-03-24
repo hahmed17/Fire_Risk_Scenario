@@ -260,7 +260,7 @@ class Farsite:
 
         self.debug = debug
 
-    def run(self, timeout=20, ncores=4):
+    def run(self, timeout=60, ncores=4):
         """Execute FARSITE. Returns subprocess return code."""
         log_dir = Path(self.tmpfolder) / "farsite_logs"
         log_dir.mkdir(parents=True, exist_ok=True)
