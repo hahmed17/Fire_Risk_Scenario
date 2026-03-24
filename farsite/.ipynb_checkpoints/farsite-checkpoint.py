@@ -22,8 +22,9 @@ import glob
 import warnings
 from pathlib import Path
 
+import numpy as np
 import geopandas as gpd
-from shapely.geometry import Polygon, MultiPolygon, GeometryCollection
+from shapely.geometry import Polygon, MultiPolygon, GeometryCollection, box
 from shapely.ops import unary_union
 from shapely import make_valid
 
@@ -318,6 +319,119 @@ class Farsite:
                 polys.append(Polygon(geom.coords))
         return polys if polys else None
 
+    def output_perimeters_from_rasters(self):
+        """
+        Extract fire perimeters from ArrivalTime raster outputs.
+
+        FARSITE writes {outpath}_{elapsed}_ArrivalTime.asc for each timestep
+        when WRITE_OUTPUTS_EACH_TIMESTEP=1.  These rasters record the fire
+        arrival time (minutes from start) at every cell.  We threshold each
+        raster at its timestep value to build a burned-area polygon.
+
+        This is more robust than the shapefile approach because FARSITE
+        always writes the rasters even when perimeter vectorization fails
+        (common with complex, fast-spreading fires in SB40 brush fuels).
+
+        Returns
+        -------
+        list of (elapsed_minutes, Shapely geometry) sorted by time, or None
+        """
+        tmp_dir = Path(self.tmpfolder)
+
+        # Collect per-timestep rasters: {id}_out_{elapsed}_ArrivalTime.asc
+        pattern = f"{self.id}_out_*_ArrivalTime.asc"
+        asc_files = sorted(tmp_dir.glob(pattern))
+
+        if not asc_files:
+            return None
+
+        results = []
+
+        for asc_path in asc_files:
+            # --- parse elapsed minutes from filename ---
+            parts = asc_path.stem.split('_')
+            elapsed = None
+            for j, part in enumerate(parts):
+                if part == 'ArrivalTime' and j > 0:
+                    try:
+                        elapsed = int(parts[j - 1])
+                    except ValueError:
+                        pass
+            if elapsed is None:
+                continue
+
+            poly = self._raster_to_polygon(asc_path, elapsed)
+            if poly is not None:
+                results.append((elapsed, poly))
+
+        # --- handle the missing final timestep ---
+        # FARSITE doesn't write a _240_ArrivalTime.asc for the last step.
+        # But the previous raster (e.g. _210_) already contains arrival
+        # times for cells that burned between 210-240. We just need to
+        # re-read the last available raster using the full simulation
+        # duration as the threshold.
+        dt = self.config.FARSITE_END_TIME - self.config.FARSITE_START_TIME
+        total_elapsed = int(dt.total_seconds() / 60)
+        existing_times = {r[0] for r in results}
+
+        if total_elapsed not in existing_times and results:
+            # Re-read the last raster with the full duration as threshold
+            last_elapsed, _ = results[-1]
+            last_asc = tmp_dir / f"{self.id}_out_{last_elapsed}_ArrivalTime.asc"
+            if last_asc.exists():
+                poly = self._raster_to_polygon(last_asc, total_elapsed)
+                if poly is not None:
+                    results.append((total_elapsed, poly))
+
+        return sorted(results, key=lambda r: r[0]) if results else None
+
+    def _raster_to_polygon(self, asc_path, elapsed):
+        """Read an ArrivalTime .asc and return a burned-area polygon."""
+        header = {}
+        with open(asc_path, 'r') as f:
+            for _ in range(6):
+                tokens = f.readline().strip().split()
+                header[tokens[0].lower()] = float(tokens[1])
+
+        ncols    = int(header['ncols'])
+        nrows    = int(header['nrows'])
+        xll      = header.get('xllcorner', header.get('xllcenter', 0))
+        yll      = header.get('yllcorner', header.get('yllcenter', 0))
+        cellsize = header['cellsize']
+        nodata   = header.get('nodata_value', -1)
+
+        data = np.loadtxt(asc_path, skiprows=6)
+
+        burned = (data != nodata) & (data >= 0) & (data <= elapsed)
+        if not burned.any():
+            return None
+
+        cell_polys = []
+        for row in range(nrows):
+            col_start = None
+            for col in range(ncols):
+                if burned[row, col]:
+                    if col_start is None:
+                        col_start = col
+                else:
+                    if col_start is not None:
+                        x0 = xll + col_start * cellsize
+                        x1 = xll + col * cellsize
+                        y0 = yll + (nrows - row - 1) * cellsize
+                        y1 = yll + (nrows - row) * cellsize
+                        cell_polys.append(box(x0, y0, x1, y1))
+                        col_start = None
+            if col_start is not None:
+                x0 = xll + col_start * cellsize
+                x1 = xll + ncols * cellsize
+                y0 = yll + (nrows - row - 1) * cellsize
+                y1 = yll + (nrows - row) * cellsize
+                cell_polys.append(box(x0, y0, x1, y1))
+
+        if cell_polys:
+            return unary_union(cell_polys)
+        return None
+
 
 # ============================================================================
 # CLEANUP
@@ -345,7 +459,6 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
                          debug=False):
     """
     Run FARSITE forward simulation for specified time period.
-    Exact copy of the working implementation from the Firemap repo.
 
     Args:
         poly:        Initial fire perimeter (Shapely Polygon, EPSG:5070)
@@ -433,10 +546,11 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
     Run a single continuous FARSITE simulation for the full duration,
     with WRITE_OUTPUTS_EACH_TIMESTEP=1 to capture intermediate perimeters.
 
-    Unlike forward_pass_farsite (which breaks the simulation into separate
-    FARSITE invocations that each restart fire acceleration), this function
-    runs ONE continuous simulation so the fire accelerates once and spreads
-    at equilibrium rate for the rest of the period.
+    Perimeter extraction strategy:
+      1. Try the Perimeters shapefile first (vector perimeters).
+      2. If the shapefile has fewer perimeters than expected, fall back
+         to the ArrivalTime rasters which FARSITE always writes even
+         when vectorization fails.
 
     Args:
         poly:        Initial fire perimeter (Shapely Polygon, EPSG:5070)
@@ -448,7 +562,7 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
         debug:       Keep intermediate files if True
 
     Returns:
-        List of Shapely Polygons (one per internal timestep), or None on failure
+        List of (elapsed_minutes, Shapely geometry) tuples, or None on failure
     """
     if dist_res > 500:
         warnings.warn(f'dist_res ({dist_res}) must be 1-500. Setting to 500')
@@ -457,6 +571,9 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
         warnings.warn(f'perim_res ({perim_res}) must be 1-500. Setting to 500')
         perim_res = 500
 
+    dt = params['dt']
+    n_expected = int(dt.total_seconds() / 60) // MAX_FARSITE_TIMESTEP
+
     farsite = Farsite(poly, params, start_time=start_time,
                       lcppath=lcppath, dist_res=dist_res,
                       perim_res=perim_res, fuel_moistures=fuel_moistures,
@@ -464,14 +581,46 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
                       raws_elevation=raws_elevation,
                       write_each_timestep=1,
                       debug=debug)
-    farsite.run()
+    rc = farsite.run()
+
+    if rc == 124:
+        print(f"WARNING: FARSITE timed out (exit code 124). Partial results may be available.")
+    elif rc != 0:
+        print(f"WARNING: FARSITE exited with code {rc}.")
+
+    # --- Strategy 1: try shapefile perimeters ---
     polys = farsite.output_all_geoms()
+    n_from_shp = len(polys) if polys else 0
 
-    if polys is None:
-        print("No output perimeters produced; keeping outputs for inspection.")
-        return None
+    if polys and n_from_shp >= n_expected:
+        results = []
+        for idx, p in enumerate(polys):
+            elapsed = (idx + 1) * MAX_FARSITE_TIMESTEP
+            results.append((elapsed, p))
+        if not debug:
+            cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
+        return results
 
-    if not debug:
-        cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
+    # --- Strategy 2: fall back to ArrivalTime rasters ---
+    raster_results = farsite.output_perimeters_from_rasters()
+    n_from_raster = len(raster_results) if raster_results else 0
 
-    return polys
+    if raster_results and n_from_raster > n_from_shp:
+        print(f"  Shapefile had {n_from_shp}/{n_expected} perimeters; "
+              f"recovered {n_from_raster} from ArrivalTime rasters.")
+        if not debug:
+            cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
+        return raster_results
+
+    # --- Use whatever we got (shapefile partial results) ---
+    if polys:
+        results = []
+        for idx, p in enumerate(polys):
+            elapsed = (idx + 1) * MAX_FARSITE_TIMESTEP
+            results.append((elapsed, p))
+        if not debug:
+            cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
+        return results
+
+    print("No output perimeters produced; keeping outputs for inspection.")
+    return None
