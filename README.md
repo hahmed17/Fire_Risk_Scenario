@@ -48,5 +48,7 @@
 
 
 # Final Model Outputs
-**`fire_output_geojsons/perimeters.geojson`** contains FARSITE prediction geometries and timesteps.
+**`farsite_outputs** directory
+- `output_perimeters.geojson` contains FARSITE prediction geometries and timesteps.
+- `perimeters_shapefile`, `buildings_shapefile`, and `roads_shapefile` contain Shapefile outputs to create Esri Feature layers.
 
