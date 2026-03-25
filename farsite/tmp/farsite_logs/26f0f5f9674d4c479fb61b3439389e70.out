@@ -1,0 +1,91 @@
+Farsite $Rev: 2395 $
+Number of parallel threads = 4 (omp_get_num_procs = 6).
+Loading lcp file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/Forest_LCP_Outputs/landscape.lcp
+Loading inputs file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_config.cfg
+Loading ignition file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_ignite.shp
+Loading barrier file for Farsite #1: /home/jovyan/work/Fire_Risk_Scenario/farsite/NoBarrier/NoBarrier.shp
+Launching Farsite #1
+Starting time step 0.000000 (maximum = 300)
+Starting time step 30.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_30_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_30_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_30_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_30_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_30_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_30_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_30_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_30_SpreadDirection.asc
+Starting time step 60.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_60_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_60_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_60_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_60_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_60_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_60_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_60_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_60_SpreadDirection.asc
+Starting time step 90.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_90_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_90_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_90_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_90_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_90_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_90_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_90_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_90_SpreadDirection.asc
+Starting time step 120.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_120_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_120_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_120_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_120_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_120_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_120_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_120_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_120_SpreadDirection.asc
+Starting time step 150.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_150_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_150_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_150_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_150_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_150_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_150_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_150_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_150_SpreadDirection.asc
+Starting time step 180.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_180_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_180_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_180_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_180_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_180_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_180_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_180_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_180_SpreadDirection.asc
+Starting time step 210.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_210_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_210_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_210_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_210_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_210_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_210_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_210_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_210_SpreadDirection.asc
+Starting time step 240.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_240_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_240_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_240_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_240_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_240_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_240_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_240_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_240_SpreadDirection.asc
+Starting time step 270.000000 (maximum = 300)
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_270_ArrivalTime.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_270_Intensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_270_FlameLength.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_270_SpreadRate.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_270_HeatPerUnitArea.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_270_ReactionIntensity.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_270_CrownFire.asc
+writing to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out_270_SpreadDirection.asc
+Starting time step 300.000000 (maximum = 300)
+Writing outputs for Farsite #1 to /home/jovyan/work/Fire_Risk_Scenario/farsite/tmp/26f0f5f9674d4c479fb61b3439389e70_out
