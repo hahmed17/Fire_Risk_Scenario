@@ -7,10 +7,8 @@ pip 25.1.1 from /opt/conda/lib/python3.12/site-packages/pip (python 3.12)
 Channels:
  - conda-forge
 Platform: linux-64
-Collecting package metadata (repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7be4658f6bd0>: Failed to resolve 'conda.anaconda.org' ([Errno -3] Temporary failure in name resolution)")': /conda-forge/linux-64/repodata.json.zst
-
-/ - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
-Solving environment: / - \ | / - \ | done
+Collecting package metadata (repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
+Solving environment: / - \ | done
 
 
 ==> WARNING: A newer version of conda exists. <==
@@ -44,11 +42,11 @@ The following packages will be downloaded:
     giflib-5.2.2               |       hd590300_0          75 KB  conda-forge
     json-c-0.18                |       h6688a6e_0          81 KB  conda-forge
     lerc-4.1.0                 |       hdb68285_0         255 KB  conda-forge
-    libblas-3.11.0             |5_h4a7cf45_openblas          18 KB  conda-forge
+    libblas-3.11.0             |6_h4a7cf45_openblas          18 KB  conda-forge
     libbrotlicommon-1.1.0      |       hb9d3cd8_2          67 KB  conda-forge
     libbrotlidec-1.1.0         |       hb9d3cd8_2          32 KB  conda-forge
     libbrotlienc-1.1.0         |       hb9d3cd8_2         275 KB  conda-forge
-    libcblas-3.11.0            |5_h0358290_openblas          18 KB  conda-forge
+    libcblas-3.11.0            |6_h0358290_openblas          18 KB  conda-forge
     libdeflate-1.24            |       h86f0d12_0          71 KB  conda-forge
     libgdal-core-3.11.0        |       hd8f6baf_4        11.3 MB  conda-forge
     libgfortran-15.1.0         |       h69a702a_5          28 KB  conda-forge
@@ -57,8 +55,8 @@ The following packages will be downloaded:
     libjpeg-turbo-3.1.2        |       hb03c661_0         619 KB  conda-forge
     libjxl-0.11.1              |       h6cb5226_4         1.7 MB  conda-forge
     libkml-1.3.0               |    hf539b9f_1021         393 KB  conda-forge
-    liblapack-3.11.0           |5_h47877c9_openblas          18 KB  conda-forge
-    libopenblas-0.3.30         |pthreads_h94d23a6_4         5.7 MB  conda-forge
+    liblapack-3.11.0           |6_h47877c9_openblas          18 KB  conda-forge
+    libopenblas-0.3.32         |pthreads_h94d23a6_0         5.7 MB  conda-forge
     libpng-1.6.55              |       h421ea60_0         310 KB  conda-forge
     librttopo-1.1.0            |      hd718a1a_18         227 KB  conda-forge
     libspatialite-5.1.0        |      he17ca71_14         3.9 MB  conda-forge
@@ -87,11 +85,11 @@ The following NEW packages will be INSTALLED:
   giflib             conda-forge/linux-64::giflib-5.2.2-hd590300_0 
   json-c             conda-forge/linux-64::json-c-0.18-h6688a6e_0 
   lerc               conda-forge/linux-64::lerc-4.1.0-hdb68285_0 
-  libblas            conda-forge/linux-64::libblas-3.11.0-5_h4a7cf45_openblas 
+  libblas            conda-forge/linux-64::libblas-3.11.0-6_h4a7cf45_openblas 
   libbrotlicommon    conda-forge/linux-64::libbrotlicommon-1.1.0-hb9d3cd8_2 
   libbrotlidec       conda-forge/linux-64::libbrotlidec-1.1.0-hb9d3cd8_2 
   libbrotlienc       conda-forge/linux-64::libbrotlienc-1.1.0-hb9d3cd8_2 
-  libcblas           conda-forge/linux-64::libcblas-3.11.0-5_h0358290_openblas 
+  libcblas           conda-forge/linux-64::libcblas-3.11.0-6_h0358290_openblas 
   libdeflate         conda-forge/linux-64::libdeflate-1.24-h86f0d12_0 
   libgdal-core       conda-forge/linux-64::libgdal-core-3.11.0-hd8f6baf_4 
   libgfortran        conda-forge/linux-64::libgfortran-15.1.0-h69a702a_5 
@@ -100,8 +98,8 @@ The following NEW packages will be INSTALLED:
   libjpeg-turbo      conda-forge/linux-64::libjpeg-turbo-3.1.2-hb03c661_0 
   libjxl             conda-forge/linux-64::libjxl-0.11.1-h6cb5226_4 
   libkml             conda-forge/linux-64::libkml-1.3.0-hf539b9f_1021 
-  liblapack          conda-forge/linux-64::liblapack-3.11.0-5_h47877c9_openblas 
-  libopenblas        conda-forge/linux-64::libopenblas-0.3.30-pthreads_h94d23a6_4 
+  liblapack          conda-forge/linux-64::liblapack-3.11.0-6_h47877c9_openblas 
+  libopenblas        conda-forge/linux-64::libopenblas-0.3.32-pthreads_h94d23a6_0 
   libpng             conda-forge/linux-64::libpng-1.6.55-h421ea60_0 
   librttopo          conda-forge/linux-64::librttopo-1.1.0-hd718a1a_18 
   libspatialite      conda-forge/linux-64::libspatialite-5.1.0-he17ca71_14 
@@ -129,7 +127,7 @@ The following packages will be UPDATED:
 Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 MB   |            |   0% 
 numpy-2.4.3          | 8.4 MB    |            |   0% [A
 
-libopenblas-0.3.30   | 5.7 MB    |            |   0% [A[A
+libopenblas-0.3.32   | 5.7 MB    |            |   0% [A[A
 
 
 libspatialite-5.1.0  | 3.9 MB    |            |   0% [A[A[A
@@ -316,20 +314,16 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
- ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-libspatialite-5.1.0  | 3.9 MB    |            |   0% [A[A[A
-numpy-2.4.3          | 8.4 MB    |            |   0% [A
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Alibgdal-core-3.11.0  | 11.3 MB   |            |   0% 
 
 
 
 proj-9.6.0           | 3.0 MB    |            |   1% [A[A[A[A
 
-libopenblas-0.3.30   | 5.7 MB    |            |   0% [A[A
 
 
-libspatialite-5.1.0  | 3.9 MB    | ########## | 100% [A[A[A
+proj-9.6.0           | 3.0 MB    | ########## | 100% [A[A[A[A
+numpy-2.4.3          | 8.4 MB    |            |   0% [Alibgdal-core-3.11.0  | 11.3 MB   | ###6       |  36% 
 
 
 
@@ -338,24 +332,18 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-proj-9.6.0           | 3.0 MB    | ########## | 100% [A[A[A[A
-numpy-2.4.3          | 8.4 MB    | #########6 |  97% [A
-
-
-
-
-
-geos-3.13.1          | 1.8 MB    |            |   1% [A[A[A[A[A[Alibgdal-core-3.11.0  | 11.3 MB   |            |   0% 
-
-
-
 
 openssl-3.6.1        | 3.0 MB    | ########## | 100% [A[A[A[A[A
+numpy-2.4.3          | 8.4 MB    | #####4     |  54% [A
 
 
 
 
-openssl-3.6.1        | 3.0 MB    | ########## | 100% [A[A[A[A[A
+
+geos-3.13.1          | 1.8 MB    |            |   1% [A[A[A[A[A[A
+
+
+libspatialite-5.1.0  | 3.9 MB    |            |   0% [A[A[Alibgdal-core-3.11.0  | 11.3 MB   | ########## | 100% libgdal-core-3.11.0  | 11.3 MB   | ########## | 100% 
 
 
 
@@ -371,16 +359,17 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 libjxl-0.11.1        | 1.7 MB    |            |   1% [A[A[A[A[A[A[A[A
 
-libopenblas-0.3.30   | 5.7 MB    | ########## | 100% [A[A
 
-libopenblas-0.3.30   | 5.7 MB    | ########## | 100% [A[A
-
+libspatialite-5.1.0  | 3.9 MB    | #######7   |  77% [A[A[A
 
 
 
+proj-9.6.0           | 3.0 MB    | ########## | 100% [A[A[A[A
 
 
-gdal-3.11.0          | 1.7 MB    |            |   1% [A[A[A[A[A[A[Alibgdal-core-3.11.0  | 11.3 MB   | ###9       |  40% 
+
+proj-9.6.0           | 3.0 MB    | ########## | 100% [A[A[A[A
+numpy-2.4.3          | 8.4 MB    | ########## | 100% [A
 numpy-2.4.3          | 8.4 MB    | ########## | 100% [A
 
 
@@ -388,9 +377,7 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-
-
-xerces-c-3.2.5       | 1.6 MB    |            |   1% [A[A[A[A[A[A[A[A[A
+gdal-3.11.0          | 1.7 MB    |            |   1% [A[A[A[A[A[A[A
 
 
 
@@ -407,16 +394,19 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
+xerces-c-3.2.5       | 1.6 MB    |            |   1% [A[A[A[A[A[A[A[A[A
 
 
-libhwy-1.3.0         | 1.4 MB    | 1          |   1% [A[A[A[A[A[A[A[A[A[A[A
+libspatialite-5.1.0  | 3.9 MB    | ########## | 100% [A[A[A
 
 
 
 
 
 
-gdal-3.11.0          | 1.7 MB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+xerces-c-3.2.5       | 1.6 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
 
 
 
@@ -435,7 +425,9 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-xerces-c-3.2.5       | 1.6 MB    | ########## | 100% [A[A[A[A[A[A[A[A[Alibgdal-core-3.11.0  | 11.3 MB   | ########4  |  84% 
+
+
+libhwy-1.3.0         | 1.4 MB    | 1          |   1% [A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -448,6 +440,42 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 pcre2-10.45          | 1.1 MB    | 1          |   1% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+gdal-3.11.0          | 1.7 MB    | #########5 |  95% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+libgfortran5-15.1.0  | 1.5 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+gdal-3.11.0          | 1.7 MB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+pcre2-10.45          | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -468,81 +496,10 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-libgfortran5-15.1.0  | 1.5 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
 
 
 
 sqlite-3.49.2        | 840 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-pcre2-10.45          | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
-
-
-libspatialite-5.1.0  | 3.9 MB    | ########## | 100% [A[A[A
-
-
-libspatialite-5.1.0  | 3.9 MB    | ########## | 100% [A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-libjpeg-turbo-3.1.2  | 619 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-libwebp-base-1.6.0   | 419 KB    | 3          |   4% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-sqlite-3.49.2        | 840 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -573,7 +530,52 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
+libwebp-base-1.6.0   | 419 KB    | 3          |   4% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libjpeg-turbo-3.1.2  | 619 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 libwebp-base-1.6.0   | 419 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libtiff-4.7.1        | 427 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -600,9 +602,7 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-
-
-libtiff-4.7.1        | 427 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+sqlite-3.49.2        | 840 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -637,95 +637,108 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-
-
- ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 libkml-1.3.0         | 393 KB    | 4          |   4% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-libpng-1.6.55        | 310 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-libkml-1.3.0         | 393 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-proj-9.6.0           | 3.0 MB    | ########## | 100% [A[A[A[A
-
-
-
-proj-9.6.0           | 3.0 MB    | ########## | 100% [A[A[A[Alibgdal-core-3.11.0  | 11.3 MB   | ########## | 100% 
 
 
 
 
 openssl-3.6.1        | 3.0 MB    | ########## | 100% [A[A[A[A[A
 
-libopenblas-0.3.30   | 5.7 MB    | ########## | 100% [A[A
+
+
+
+openssl-3.6.1        | 3.0 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libpng-1.6.55        | 310 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libkml-1.3.0         | 393 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+libopenblas-0.3.32   | 5.7 MB    |            |   0% [A[A
+
+libopenblas-0.3.32   | 5.7 MB    | #####5     |  55% [A[A
+
+
+
+
+
+geos-3.13.1          | 1.8 MB    | ########## | 100% [A[A[A[A[A[A
+
+
+
+
+
+geos-3.13.1          | 1.8 MB    | ########## | 100% [A[A[A[A[A[A
+
+libopenblas-0.3.32   | 5.7 MB    | ########## | 100% [A[A
 
 
 
@@ -741,26 +754,48 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-libjxl-0.11.1        | 1.7 MB    | ########## | 100% [A[A[A[A[A[A[A[A
+libjxl-0.11.1        | 1.7 MB    | ########## | 100% [A[A[A[A[A[A[A[Alibgdal-core-3.11.0  | 11.3 MB   | ########## | 100% 
 
 
-
-
-
-geos-3.13.1          | 1.8 MB    | ########## | 100% [A[A[A[A[A[A
-
-
-
-
-
-geos-3.13.1          | 1.8 MB    | ########## | 100% [A[A[A[A[A[A
+libspatialite-5.1.0  | 3.9 MB    | ########## | 100% [A[A[A
 
 
 
 
 
 
-gdal-3.11.0          | 1.7 MB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+libgfortran5-15.1.0  | 1.5 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+libgfortran5-15.1.0  | 1.5 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+xerces-c-3.2.5       | 1.6 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+xerces-c-3.2.5       | 1.6 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
 
 
 
@@ -798,36 +833,10 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-xerces-c-3.2.5       | 1.6 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
 
 
 
-
-
-
-
-
-xerces-c-3.2.5       | 1.6 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-libgfortran5-15.1.0  | 1.5 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-libgfortran5-15.1.0  | 1.5 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+pcre2-10.45          | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -839,21 +848,7 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-
-sqlite-3.49.2        | 840 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-sqlite-3.49.2        | 840 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+pcre2-10.45          | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -899,58 +894,6 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 
-libjpeg-turbo-3.1.2  | 619 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-libjpeg-turbo-3.1.2  | 619 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-pcre2-10.45          | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-pcre2-10.45          | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 libtiff-4.7.1        | 427 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
 
@@ -968,6 +911,32 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 libtiff-4.7.1        | 427 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+sqlite-3.49.2        | 840 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+sqlite-3.49.2        | 840 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -1004,6 +973,34 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 libpng-1.6.55        | 310 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libjpeg-turbo-3.1.2  | 619 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libjpeg-turbo-3.1.2  | 619 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
 
 
 
@@ -1076,7 +1073,11 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 
 libkml-1.3.0         | 393 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-numpy-2.4.3          | 8.4 MB    | ########## | 100% [Alibgdal-core-3.11.0  | 11.3 MB   | ########## | 100% 
+numpy-2.4.3          | 8.4 MB    | ########## | 100% [A
+
+libopenblas-0.3.32   | 5.7 MB    | ########## | 100% [A[A
+
+libopenblas-0.3.32   | 5.7 MB    | ########## | 100% [A[A
 
 
 
@@ -1439,14 +1440,14 @@ Downloading and Extracting Packages: ...working...libgdal-core-3.11.0  | 11.3 M
 
 [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
 [A done
-Preparing transaction: - \ done
-Verifying transaction: / - \ | / - \ | / - done
-Executing transaction: | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
+Preparing transaction: - done
+Verifying transaction: | / - \ | / done
+Executing transaction: \ | / - \ | / - \ | / - \ | done
 Channels:
  - conda-forge
 Platform: linux-64
 Collecting package metadata (repodata.json): - \ | / - done
-Solving environment: | / - \ | / - \ done
+Solving environment: | / - \ done
 
 
 ==> WARNING: A newer version of conda exists. <==
@@ -1481,7 +1482,7 @@ The following NEW packages will be INSTALLED:
 
 
 
-Downloading and Extracting Packages: ...working...proj-data-1.24       | 754.8 MB  |            |   0% proj-data-1.24       | 754.8 MB  |            |   0% proj-data-1.24       | 754.8 MB  | 3          |   3% proj-data-1.24       | 754.8 MB  | 5          |   6% proj-data-1.24       | 754.8 MB  | 7          |   8% proj-data-1.24       | 754.8 MB  | 9          |   9% proj-data-1.24       | 754.8 MB  | #          |  11% proj-data-1.24       | 754.8 MB  | #2         |  12% proj-data-1.24       | 754.8 MB  | #3         |  13% proj-data-1.24       | 754.8 MB  | #4         |  14% proj-data-1.24       | 754.8 MB  | #5         |  15% proj-data-1.24       | 754.8 MB  | #6         |  16% proj-data-1.24       | 754.8 MB  | #7         |  17% proj-data-1.24       | 754.8 MB  | #8         |  18% proj-data-1.24       | 754.8 MB  | #9         |  19% proj-data-1.24       | 754.8 MB  | ##         |  20% proj-data-1.24       | 754.8 MB  | ##         |  21% proj-data-1.24       | 754.8 MB  | ##1        |  22% proj-data-1.24       | 754.8 MB  | ##2        |  23% proj-data-1.24       | 754.8 MB  | ##3        |  24% proj-data-1.24       | 754.8 MB  | ##4        |  25% proj-data-1.24       | 754.8 MB  | ##5        |  26% proj-data-1.24       | 754.8 MB  | ##6        |  27% proj-data-1.24       | 754.8 MB  | ##7        |  27% proj-data-1.24       | 754.8 MB  | ##8        |  28% proj-data-1.24       | 754.8 MB  | ##9        |  29% proj-data-1.24       | 754.8 MB  | ###        |  30% proj-data-1.24       | 754.8 MB  | ###1       |  31% proj-data-1.24       | 754.8 MB  | ###2       |  32% proj-data-1.24       | 754.8 MB  | ###2       |  33% proj-data-1.24       | 754.8 MB  | ###3       |  34% proj-data-1.24       | 754.8 MB  | ###4       |  35% proj-data-1.24       | 754.8 MB  | ###5       |  36% proj-data-1.24       | 754.8 MB  | ###6       |  36% proj-data-1.24       | 754.8 MB  | ###7       |  37% proj-data-1.24       | 754.8 MB  | ###8       |  38% proj-data-1.24       | 754.8 MB  | ###9       |  39% proj-data-1.24       | 754.8 MB  | ####       |  40% proj-data-1.24       | 754.8 MB  | ####1      |  41% proj-data-1.24       | 754.8 MB  | ####1      |  42% proj-data-1.24       | 754.8 MB  | ####2      |  43% proj-data-1.24       | 754.8 MB  | ####3      |  44% proj-data-1.24       | 754.8 MB  | ####4      |  45% proj-data-1.24       | 754.8 MB  | ####5      |  46% proj-data-1.24       | 754.8 MB  | ####6      |  47% proj-data-1.24       | 754.8 MB  | ####7      |  48% proj-data-1.24       | 754.8 MB  | ####8      |  48% proj-data-1.24       | 754.8 MB  | ####9      |  49% proj-data-1.24       | 754.8 MB  | #####      |  50% proj-data-1.24       | 754.8 MB  | #####1     |  51% proj-data-1.24       | 754.8 MB  | #####2     |  52% proj-data-1.24       | 754.8 MB  | #####3     |  53% proj-data-1.24       | 754.8 MB  | #####4     |  54% proj-data-1.24       | 754.8 MB  | #####4     |  55% proj-data-1.24       | 754.8 MB  | #####5     |  56% proj-data-1.24       | 754.8 MB  | #####6     |  57% proj-data-1.24       | 754.8 MB  | #####7     |  58% proj-data-1.24       | 754.8 MB  | #####8     |  58% proj-data-1.24       | 754.8 MB  | #####9     |  59% proj-data-1.24       | 754.8 MB  | ######     |  60% proj-data-1.24       | 754.8 MB  | ######1    |  61% proj-data-1.24       | 754.8 MB  | ######2    |  62% proj-data-1.24       | 754.8 MB  | ######3    |  63% proj-data-1.24       | 754.8 MB  | ######4    |  64% proj-data-1.24       | 754.8 MB  | ######5    |  65% proj-data-1.24       | 754.8 MB  | ######5    |  66% proj-data-1.24       | 754.8 MB  | ######6    |  67% proj-data-1.24       | 754.8 MB  | ######7    |  68% proj-data-1.24       | 754.8 MB  | ######8    |  69% proj-data-1.24       | 754.8 MB  | ######9    |  70% proj-data-1.24       | 754.8 MB  | #######    |  70% proj-data-1.24       | 754.8 MB  | #######1   |  71% proj-data-1.24       | 754.8 MB  | #######2   |  72% proj-data-1.24       | 754.8 MB  | #######2   |  73% proj-data-1.24       | 754.8 MB  | #######3   |  74% proj-data-1.24       | 754.8 MB  | #######4   |  75% proj-data-1.24       | 754.8 MB  | #######5   |  75% proj-data-1.24       | 754.8 MB  | #######6   |  76% proj-data-1.24       | 754.8 MB  | #######7   |  77% proj-data-1.24       | 754.8 MB  | #######8   |  78% proj-data-1.24       | 754.8 MB  | #######8   |  79% proj-data-1.24       | 754.8 MB  | #######9   |  80% proj-data-1.24       | 754.8 MB  | ########   |  81% proj-data-1.24       | 754.8 MB  | ########1  |  81% proj-data-1.24       | 754.8 MB  | ########2  |  82% proj-data-1.24       | 754.8 MB  | ########3  |  83% proj-data-1.24       | 754.8 MB  | ########4  |  84% proj-data-1.24       | 754.8 MB  | ########4  |  85% proj-data-1.24       | 754.8 MB  | ########5  |  86% proj-data-1.24       | 754.8 MB  | ########6  |  87% proj-data-1.24       | 754.8 MB  | ########7  |  88% proj-data-1.24       | 754.8 MB  | ########8  |  89% proj-data-1.24       | 754.8 MB  | ########9  |  89% proj-data-1.24       | 754.8 MB  | #########  |  90% proj-data-1.24       | 754.8 MB  | #########1 |  91% proj-data-1.24       | 754.8 MB  | #########2 |  92% proj-data-1.24       | 754.8 MB  | #########3 |  93% proj-data-1.24       | 754.8 MB  | #########4 |  94% proj-data-1.24       | 754.8 MB  | #########5 |  95% proj-data-1.24       | 754.8 MB  | #########6 |  96% proj-data-1.24       | 754.8 MB  | #########6 |  97% proj-data-1.24       | 754.8 MB  | #########7 |  98% proj-data-1.24       | 754.8 MB  | #########8 |  99% proj-data-1.24       | 754.8 MB  | #########9 | 100% proj-data-1.24       | 754.8 MB  | ########## | 100% proj-data-1.24       | 754.8 MB  | ########## | 100%                                                       done
+Downloading and Extracting Packages: ...working...proj-data-1.24       | 754.8 MB  |            |   0% proj-data-1.24       | 754.8 MB  |            |   0% proj-data-1.24       | 754.8 MB  |            |   1% proj-data-1.24       | 754.8 MB  | 2          |   2% proj-data-1.24       | 754.8 MB  | 3          |   3% proj-data-1.24       | 754.8 MB  | 4          |   4% proj-data-1.24       | 754.8 MB  | 4          |   5% proj-data-1.24       | 754.8 MB  | 5          |   6% proj-data-1.24       | 754.8 MB  | 6          |   7% proj-data-1.24       | 754.8 MB  | 7          |   7% proj-data-1.24       | 754.8 MB  | 8          |   8% proj-data-1.24       | 754.8 MB  | 9          |   9% proj-data-1.24       | 754.8 MB  | #          |  10% proj-data-1.24       | 754.8 MB  | #          |  11% proj-data-1.24       | 754.8 MB  | #1         |  12% proj-data-1.24       | 754.8 MB  | #2         |  13% proj-data-1.24       | 754.8 MB  | #3         |  13% proj-data-1.24       | 754.8 MB  | #4         |  14% proj-data-1.24       | 754.8 MB  | #5         |  15% proj-data-1.24       | 754.8 MB  | #5         |  16% proj-data-1.24       | 754.8 MB  | #6         |  17% proj-data-1.24       | 754.8 MB  | #7         |  17% proj-data-1.24       | 754.8 MB  | #8         |  18% proj-data-1.24       | 754.8 MB  | #8         |  19% proj-data-1.24       | 754.8 MB  | #9         |  20% proj-data-1.24       | 754.8 MB  | ##         |  21% proj-data-1.24       | 754.8 MB  | ##1        |  21% proj-data-1.24       | 754.8 MB  | ##2        |  22% proj-data-1.24       | 754.8 MB  | ##3        |  23% proj-data-1.24       | 754.8 MB  | ##3        |  24% proj-data-1.24       | 754.8 MB  | ##4        |  25% proj-data-1.24       | 754.8 MB  | ##5        |  26% proj-data-1.24       | 754.8 MB  | ##6        |  27% proj-data-1.24       | 754.8 MB  | ##7        |  27% proj-data-1.24       | 754.8 MB  | ##8        |  28% proj-data-1.24       | 754.8 MB  | ##9        |  29% proj-data-1.24       | 754.8 MB  | ###        |  30% proj-data-1.24       | 754.8 MB  | ###        |  31% proj-data-1.24       | 754.8 MB  | ###1       |  32% proj-data-1.24       | 754.8 MB  | ###2       |  33% proj-data-1.24       | 754.8 MB  | ###3       |  34% proj-data-1.24       | 754.8 MB  | ###4       |  34% proj-data-1.24       | 754.8 MB  | ###5       |  35% proj-data-1.24       | 754.8 MB  | ###6       |  36% proj-data-1.24       | 754.8 MB  | ###7       |  37% proj-data-1.24       | 754.8 MB  | ###8       |  38% proj-data-1.24       | 754.8 MB  | ###8       |  39% proj-data-1.24       | 754.8 MB  | ###9       |  40% proj-data-1.24       | 754.8 MB  | ####       |  41% proj-data-1.24       | 754.8 MB  | ####1      |  41% proj-data-1.24       | 754.8 MB  | ####2      |  42% proj-data-1.24       | 754.8 MB  | ####3      |  43% proj-data-1.24       | 754.8 MB  | ####4      |  44% proj-data-1.24       | 754.8 MB  | ####4      |  45% proj-data-1.24       | 754.8 MB  | ####5      |  46% proj-data-1.24       | 754.8 MB  | ####6      |  47% proj-data-1.24       | 754.8 MB  | ####7      |  47% proj-data-1.24       | 754.8 MB  | ####8      |  48% proj-data-1.24       | 754.8 MB  | ####8      |  49% proj-data-1.24       | 754.8 MB  | ####9      |  50% proj-data-1.24       | 754.8 MB  | #####      |  51% proj-data-1.24       | 754.8 MB  | #####1     |  51% proj-data-1.24       | 754.8 MB  | #####2     |  52% proj-data-1.24       | 754.8 MB  | #####3     |  53% proj-data-1.24       | 754.8 MB  | #####4     |  54% proj-data-1.24       | 754.8 MB  | #####4     |  55% proj-data-1.24       | 754.8 MB  | #####5     |  56% proj-data-1.24       | 754.8 MB  | #####6     |  57% proj-data-1.24       | 754.8 MB  | #####7     |  57% proj-data-1.24       | 754.8 MB  | #####8     |  58% proj-data-1.24       | 754.8 MB  | #####8     |  59% proj-data-1.24       | 754.8 MB  | #####9     |  60% proj-data-1.24       | 754.8 MB  | ######     |  61% proj-data-1.24       | 754.8 MB  | ######1    |  61% proj-data-1.24       | 754.8 MB  | ######2    |  62% proj-data-1.24       | 754.8 MB  | ######2    |  63% proj-data-1.24       | 754.8 MB  | ######3    |  64% proj-data-1.24       | 754.8 MB  | ######4    |  64% proj-data-1.24       | 754.8 MB  | ######5    |  65% proj-data-1.24       | 754.8 MB  | ######5    |  66% proj-data-1.24       | 754.8 MB  | ######6    |  67% proj-data-1.24       | 754.8 MB  | ######7    |  68% proj-data-1.24       | 754.8 MB  | ######8    |  68% proj-data-1.24       | 754.8 MB  | ######9    |  69% proj-data-1.24       | 754.8 MB  | #######    |  70% proj-data-1.24       | 754.8 MB  | #######    |  71% proj-data-1.24       | 754.8 MB  | #######1   |  72% proj-data-1.24       | 754.8 MB  | #######2   |  73% proj-data-1.24       | 754.8 MB  | #######3   |  73% proj-data-1.24       | 754.8 MB  | #######4   |  74% proj-data-1.24       | 754.8 MB  | #######4   |  75% proj-data-1.24       | 754.8 MB  | #######5   |  76% proj-data-1.24       | 754.8 MB  | #######6   |  77% proj-data-1.24       | 754.8 MB  | #######7   |  77% proj-data-1.24       | 754.8 MB  | #######8   |  78% proj-data-1.24       | 754.8 MB  | #######9   |  79% proj-data-1.24       | 754.8 MB  | #######9   |  80% proj-data-1.24       | 754.8 MB  | ########   |  81% proj-data-1.24       | 754.8 MB  | ########1  |  81% proj-data-1.24       | 754.8 MB  | ########2  |  82% proj-data-1.24       | 754.8 MB  | ########3  |  83% proj-data-1.24       | 754.8 MB  | ########4  |  84% proj-data-1.24       | 754.8 MB  | ########4  |  85% proj-data-1.24       | 754.8 MB  | ########5  |  86% proj-data-1.24       | 754.8 MB  | ########6  |  86% proj-data-1.24       | 754.8 MB  | ########7  |  87% proj-data-1.24       | 754.8 MB  | ########7  |  88% proj-data-1.24       | 754.8 MB  | ########8  |  89% proj-data-1.24       | 754.8 MB  | ########9  |  89% proj-data-1.24       | 754.8 MB  | ########9  |  90% proj-data-1.24       | 754.8 MB  | #########  |  91% proj-data-1.24       | 754.8 MB  | #########1 |  91% proj-data-1.24       | 754.8 MB  | #########2 |  92% proj-data-1.24       | 754.8 MB  | #########2 |  93% proj-data-1.24       | 754.8 MB  | #########3 |  94% proj-data-1.24       | 754.8 MB  | #########4 |  94% proj-data-1.24       | 754.8 MB  | #########5 |  95% proj-data-1.24       | 754.8 MB  | #########5 |  96% proj-data-1.24       | 754.8 MB  | #########6 |  97% proj-data-1.24       | 754.8 MB  | #########7 |  98% proj-data-1.24       | 754.8 MB  | #########8 |  98% proj-data-1.24       | 754.8 MB  | #########9 |  99% proj-data-1.24       | 754.8 MB  | ########## | 100% proj-data-1.24       | 754.8 MB  | ########## | 100%                                                       done
 Preparing transaction: / done
 Verifying transaction: \ done
 Executing transaction: / done
@@ -1489,7 +1490,7 @@ Requirement already satisfied: pip in /opt/conda/lib/python3.12/site-packages (2
 Collecting pip
   Downloading pip-26.0.1-py3-none-any.whl.metadata (4.7 kB)
 Downloading pip-26.0.1-py3-none-any.whl (1.8 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.8 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.8/1.8 MB[0m [31m118.5 MB/s[0m eta [36m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.8 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.8/1.8 MB[0m [31m51.3 MB/s[0m eta [36m0:00:00[0m
 [?25hInstalling collected packages: pip
   Attempting uninstall: pip
     Found existing installation: pip 25.1.1
@@ -1616,43 +1617,43 @@ Requirement already satisfied: asttokens>=2.1.0 in /opt/conda/lib/python3.12/sit
 Requirement already satisfied: pure_eval in /opt/conda/lib/python3.12/site-packages (from stack_data->IPython->-r requirements.txt (line 3)) (0.2.3)
 Downloading OWSLib-0.28.1-py2.py3-none-any.whl (219 kB)
 Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/8.7 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m8.7/8.7 MB[0m [31m150.8 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/8.7 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m8.7/8.7 MB[0m [31m169.6 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading pandas-3.0.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/10.9 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10.9/10.9 MB[0m [31m160.1 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/10.9 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10.9/10.9 MB[0m [31m483.5 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading flask-3.1.3-py3-none-any.whl (103 kB)
 Downloading Flask_RESTful-0.3.10-py2.py3-none-any.whl (26 kB)
 Downloading geojson-3.2.0-py3-none-any.whl (15 kB)
 Downloading contextily-1.7.0-py3-none-any.whl (16 kB)
 Downloading shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.1 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/3.1 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/3.1 MB[0m [31m168.2 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/3.1 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/3.1 MB[0m [31m373.7 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading geopandas-1.1.3-py3-none-any.whl (342 kB)
 Downloading pillow-12.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/7.0 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.0/7.0 MB[0m [31m145.6 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/7.0 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.0/7.0 MB[0m [31m459.6 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading basemap-2.0.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.1 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.1/1.1 MB[0m [31m37.6 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.1 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.1/1.1 MB[0m [31m203.4 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/16.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m16.6/16.6 MB[0m [31m133.6 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/16.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m16.6/16.6 MB[0m [31m485.5 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading basemap_data-2.0.0-py3-none-any.whl (30.5 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/30.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.3/30.5 MB[0m [31m39.5 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m16.8/30.5 MB[0m [31m41.6 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━[0m [32m27.3/30.5 MB[0m [31m46.0 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m30.5/30.5 MB[0m [31m40.6 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/30.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m30.5/30.5 MB[0m [31m162.6 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading pyproj-3.7.2-cp312-cp312-manylinux_2_28_x86_64.whl (9.6 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/9.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m9.6/9.6 MB[0m [31m130.9 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/9.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m9.6/9.6 MB[0m [31m298.1 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
 Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
 Downloading colorcet-3.1.0-py3-none-any.whl (260 kB)
 Downloading influxdb-5.3.2-py2.py3-none-any.whl (79 kB)
 Downloading scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.2 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/35.2 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m34.9/35.2 MB[0m [31m174.7 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m35.2/35.2 MB[0m [31m157.5 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/35.2 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m35.2/35.2 MB[0m [31m514.9 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading aniso8601-10.0.1-py2.py3-none-any.whl (52 kB)
 Downloading click-8.3.1-py3-none-any.whl (108 kB)
 Downloading contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (362 kB)
 Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
 Downloading fonttools-4.62.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.0 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/5.0 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.0/5.0 MB[0m [31m130.9 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/5.0 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.0/5.0 MB[0m [31m424.3 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
 Downloading kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.5/1.5 MB[0m [31m242.2 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.5/1.5 MB[0m [31m332.1 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading pyogrio-0.12.1-cp312-cp312-manylinux_2_28_x86_64.whl (32.5 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/32.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m32.5/32.5 MB[0m [31m162.7 MB/s[0m  [33m0:00:00[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/32.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m32.5/32.5 MB[0m [31m233.0 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
 Downloading werkzeug-3.1.7-py3-none-any.whl (226 kB)
 Downloading geopy-2.4.1-py3-none-any.whl (125 kB)
@@ -1661,14 +1662,14 @@ Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
 Downloading mercantile-1.2.1-py3-none-any.whl (14 kB)
 Downloading msgpack-1.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (427 kB)
 Downloading rasterio-1.5.0-cp312-cp312-manylinux_2_28_x86_64.whl (37.6 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/37.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/37.6 MB[0m [31m81.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m4.2/37.6 MB[0m [31m1.3 MB/s[0m eta [36m0:00:26[0m[2K   [91m━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m13.6/37.6 MB[0m [31m4.2 MB/s[0m eta [36m0:00:06[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━[0m [32m23.1/37.6 MB[0m [31m6.7 MB/s[0m eta [36m0:00:03[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━[0m [32m31.5/37.6 MB[0m [31m8.6 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m37.6/37.6 MB[0m [31m9.9 MB/s[0m  [33m0:00:03[0m
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/37.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m37.6/37.6 MB[0m [31m253.8 MB/s[0m  [33m0:00:00[0m
 [?25hDownloading cligj-0.7.2-py3-none-any.whl (7.1 kB)
 Downloading affine-2.4.0-py3-none-any.whl (15 kB)
 Downloading xyzservices-2025.11.0-py3-none-any.whl (93 kB)
 Installing collected packages: aniso8601, xyzservices, werkzeug, pyshp, pyproj, pyparsing, pillow, numpy, msgpack, kiwisolver, joblib, itsdangerous, geojson, geographiclib, fonttools, cycler, colorcet, click, basemap_data, affine, shapely, scipy, pyogrio, pandas, OWSLib, mercantile, influxdb, geopy, flask, contourpy, cligj, rasterio, matplotlib, geopandas, flask-restful, seaborn, contextily, basemap
-[?25l[2K   [91m━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 2/38[0m [werkzeug][2K   [91m━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 4/38[0m [pyproj][2K   [91m━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 5/38[0m [pyparsing][2K   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K  Attempting uninstall: numpy
+[?25l[2K   [91m━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 2/38[0m [werkzeug][2K   [91m━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 4/38[0m [pyproj][2K   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K  Attempting uninstall: numpy
    [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K    Found existing installation: numpy 2.4.3
-   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K    Uninstalling numpy-2.4.3:
-   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K      Successfully uninstalled numpy-2.4.3
-   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10/38[0m [joblib][2K   [91m━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10/38[0m [joblib][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━[0m [32m16/38[0m [colorcet][2K   [91m━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━[0m [32m18/38[0m [basemap_data][2K   [91m━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━[0m [32m18/38[0m [basemap_data][2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m20/38[0m [shapely][2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m20/38[0m [shapely][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━[0m [32m24/38[0m [OWSLib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━[0m [32m26/38[0m [influxdb][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━[0m [32m28/38[0m [flask][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━[0m [32m33/38[0m [geopandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━[0m [32m33/38[0m [geopandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━[0m [32m33/38[0m [geopandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━[0m [32m35/38[0m [seaborn][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━[0m [32m37/38[0m [basemap][2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m38/38[0m [basemap]
+   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K    Uninstalling numpy-2.4.3:
+   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K      Successfully uninstalled numpy-2.4.3
+   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10/38[0m [joblib][2K   [91m━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m13/38[0m [geographiclib][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━[0m [32m16/38[0m [colorcet][2K   [91m━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━[0m [32m18/38[0m [basemap_data][2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m20/38[0m [shapely][2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m20/38[0m [shapely][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━[0m [32m24/38[0m [OWSLib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━[0m [32m25/38[0m [mercantile][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━[0m [32m28/38[0m [flask][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━[0m [32m33/38[0m [geopandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━[0m [32m33/38[0m [geopandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━[0m [32m35/38[0m [seaborn][2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m38/38[0m [basemap]
 [?25h[1A[2KSuccessfully installed OWSLib-0.28.1 affine-2.4.0 aniso8601-10.0.1 basemap-2.0.0 basemap_data-2.0.0 click-8.3.1 cligj-0.7.2 colorcet-3.1.0 contextily-1.7.0 contourpy-1.3.3 cycler-0.12.1 flask-3.1.3 flask-restful-0.3.10 fonttools-4.62.1 geographiclib-2.1 geojson-3.2.0 geopandas-1.1.3 geopy-2.4.1 influxdb-5.3.2 itsdangerous-2.2.0 joblib-1.5.3 kiwisolver-1.5.0 matplotlib-3.10.8 mercantile-1.2.1 msgpack-1.1.2 numpy-2.3.5 pandas-3.0.1 pillow-12.1.1 pyogrio-0.12.1 pyparsing-3.3.2 pyproj-3.7.2 pyshp-2.3.1 rasterio-1.5.0 scipy-1.17.1 seaborn-0.13.2 shapely-2.1.2 werkzeug-3.1.7 xyzservices-2025.11.0

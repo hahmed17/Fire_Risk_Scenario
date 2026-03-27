@@ -538,7 +538,7 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
                            fuel_moistures=None,
                            temperature=None, humidity=None,
                            raws_elevation=None,
-                           debug=False):
+                           debug=False, rerun_id=None):
     """
     Run a single continuous FARSITE simulation for the full duration,
     with WRITE_OUTPUTS_EACH_TIMESTEP=1 to capture intermediate perimeters.
@@ -557,6 +557,7 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
         dist_res:    Distance resolution (meters)
         perim_res:   Perimeter resolution (meters)
         debug:       Keep intermediate files if True
+        rerun_:      Return previous simulation by passing run ID for intermediate files.
 
     Returns:
         List of (elapsed_minutes, Shapely geometry) tuples, or None on failure
@@ -571,14 +572,30 @@ def run_farsite_continuous(poly, params, start_time, lcppath,
     dt = params['dt']
     n_expected = int(dt.total_seconds() / 60) // MAX_FARSITE_TIMESTEP
 
-    farsite = Farsite(poly, params, start_time=start_time,
+    if rerun_id is not None:
+        # Reuse existing outputs — build a minimal Farsite object
+        # without running the simulation
+        print(f"Rerun mode: reading existing outputs for ID {rerun_id}")
+        farsite = Farsite(poly, params, start_time=start_time,
+                          lcppath=lcppath, dist_res=dist_res,
+                          perim_res=perim_res, fuel_moistures=fuel_moistures,
+                          temperature=temperature, humidity=humidity,
+                          raws_elevation=raws_elevation,
+                          write_each_timestep=1,
+                          debug=True)
+        # Override the auto-generated ID with the previous run's ID
+        farsite.id = rerun_id
+        farsite.outpath = os.path.join(farsite.tmpfolder, "farsite_logs", f'{rerun_id}_out')
+        rc = 0
+    else: 
+        farsite = Farsite(poly, params, start_time=start_time,
                       lcppath=lcppath, dist_res=dist_res,
                       perim_res=perim_res, fuel_moistures=fuel_moistures,
                       temperature=temperature, humidity=humidity,
                       raws_elevation=raws_elevation,
                       write_each_timestep=1,
                       debug=debug)
-    rc = farsite.run()
+        rc = farsite.run()
 
     if rc == 124:
         print(f"WARNING: FARSITE timed out (exit code 124). Partial results may be available.")
