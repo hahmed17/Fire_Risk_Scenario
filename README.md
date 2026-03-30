@@ -6,7 +6,7 @@
 
 # Wildfire Commons Resources
 - **FARSITE.** The `farsite` directory contains the executable files and source code required to configure and run a FARSITE fire spread simulation.
-- **Forest landscape data.** The `Forest` directory contains the landscape and tree data (in `.tif`, `.geojson`, and `.txt` format) that are used as inputs to the FARSITE simulation.
+- **Forest landscape data.** The Wildfire Commons catalogs landscape and tree data (in `.tif`, `.geojson`, and `.txt` format) that are used as inputs to the FARSITE simulation.
 - **Ignition coordinates.** The given latitude/longitude coordinate for this location is **N 38° 54.081' W 120° 1.837'**. 
 - **Weather parameters.** Parameter values for wind, air, and climate conditions are provided as inputs to the FARSITE simulation.
 
@@ -18,7 +18,7 @@
 - Projects landscape layers to EPSG:5070
 - Aligns and rescales layers to the elevation grid
 - Converts `.tif` bands to ASCII rasters (`.asc`)
-- Compiles all layers into `Forest_LCP_Outputs/landscape.lcp` using `farsite/lcpmake` executable
+- Compiles all layers into `Forest_LCP_Outputs/landscape.lcp`
 - Writes the EPSG:5070 projection header into the `.lcp` file
 
 
@@ -36,7 +36,6 @@
 - Each step's output perimeter becomes the ignition polygon for the next step
 - Plots all perimeters and prints area growth statistics over time
 - Exports all perimeters to `fire_output_geojsons/perimeters.geojson`
-- Exports perimeter plots over time to `.png` file
 
 
 # Intermediate Model Outputs
